@@ -1,0 +1,14 @@
+
+Node {value, next}
+
+current = head
+current = 0
+
+while current != null:
+    count++
+    current = current.next
+
+    return count
+
+    sam.next= jounas.next;
+    jounas.next=sam;
