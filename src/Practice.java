@@ -14,8 +14,14 @@ public class Practice {
        // head.next.next.next = new Node('l', null);
 
        // System.out.println(head.next.next.value);
-       head = head.next;
-       printList(head);
+      // head = head.next;
+       //printList(head);
+       //Expect to return true
+       System.out.println(contains(head, 'x'));
+       // expect to print false
+       System.out.println(contains(head, 'e'));
+
+       remove(head, 't');
 
     }
 
@@ -27,5 +33,32 @@ public class Practice {
             current = current.next;
 
         }
+    }
+
+    public static boolean contains(Node start, char toFind) {
+        Node head = start;
+
+        while(head != null) {
+            if(head.value == toFind) {
+                return true;
+            }
+            head = head.next;
+        }
+            
+        return false;
+    }
+    //remove the first node that has toRemove
+    public static char remove(Node head, char toRemove) {
+        Node current = head;
+
+        while(current.next != null) {
+            if(current.next.value == toRemove) {
+                current.next = current.next.next;
+                return toRemove;
+            }
+            current = current.next;
+        }
+
+        return '\0';
     }
 }
